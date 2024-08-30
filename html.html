@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de RPG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #000, #444);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            text-align: center;
+            color: #f1c40f;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            border-color: #f1c40f;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #f1c40f;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0b90f;
+        }
+        .item, .pericia {
+            margin-top: 10px;
+            padding: 10px;
+            background: #444;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .remove-item, .remove-pericia {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-item:hover, .remove-pericia:hover {
+            background: #c0392b;
+        }
+        .inventory, .lista-pericias {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha de RPG</h1>
+        <label for="classe">Classe</label>
+        <select id="classe">
+            <option value="militar">Militar</option>
+            <option value="medico">Médico</option>
+            <option value="engenheiro">Engenheiro</option>
+            <option value="cientista">Cientista</option>
+            <option value="civil">Civil</option>
+        </select>
+
+        <div class="informacoes-gerais">
+            <label for="vida">Vida</label>
+            <input type="text" id="vida" readonly>
+
+            <label for="sanidade">Sanidade</label>
+            <input type="text" id="sanidade" readonly>
+
+            <label for="estamina">Estamina</label>
+            <input type="text" id="estamina" readonly>
+
+            <label for="defesa">Defesa</label>
+            <input type="text" id="defesa" readonly>
+
+            <label for="movimento">Movimento</label>
+            <input type="text" id="movimento" readonly>
+
+            <label for="peso-carregado">Peso Carregado</label>
+            <input type="text" id="peso-carregado" readonly>
+        </div>
+
+        <label for="vigor-atributo">Atributo de Vigor</label>
+        <input type="number" id="vigor-atributo" value="0" min="0">
+
+        <label for="sanidade-atributo">Atributo de Sanidade</label>
+        <input type="number" id="sanidade-atributo" value="0" min="0">
+
+        <label for="agilidade">Agilidade</label>
+        <input type="number" id="agilidade" value="0" min="0">
+
+        <label for="forca">Força</label>
+        <input type="number" id="forca" value="0" min="0">
+
+        <div class="inventory">
+            <h2>Inventário</h2>
+            <button id="add-item">Adicionar Item</button>
+            <!-- Itens serão adicionados aqui -->
+        </div>
+
+        <div class="lista-pericias">
+            <h2>Perícias</h2>
+            <label for="pericia">Nome da Perícia</label>
+            <input type="text" id="pericia">
+
+            <label for="nivel-pericia">Nível da Perícia</label>
+            <select id="nivel-pericia">
+                <option value="iniciante">Iniciante</option>
+                <option value="treinado">Treinado</option>
+                <option value="experiente">Experiente</option>
+            </select>
+            
+            <button id="add-pericia">Adicionar Perícia</button>
+            <!-- Perícias serão adicionadas aqui -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
